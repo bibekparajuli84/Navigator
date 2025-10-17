@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:navigating/SecondScreen.dart';
 
-class Firstscreen extends StatelessWidget {
-  const Firstscreen({super.key});
+class FirstScreen extends StatelessWidget {
+  const FirstScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +10,15 @@ class Firstscreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondScreen()),
-            );
+            // navigating to second screen using navigator.push into stack
+            // this is used for smaller apps
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => SecondScreen()),
+            // );
+
+            // named route navigation used in big project for efficiency
+            Navigator.pushNamed(context, '/second');
           },
           child: Text("go to second screen "),
         ),
